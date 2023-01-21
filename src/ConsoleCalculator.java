@@ -1,4 +1,4 @@
-public class Calculator {
+public class ConsoleCalculator implements Calculotor {
 
     public Operation calculator(Operation operation){
 
@@ -22,14 +22,14 @@ public class Calculator {
         }
         return null;
     }
-    public  static  double methodSum(double a,double b){ return  a+b;}
-    public  static  double methodSub(double a,double b){
+    public double methodSum(double a,double b){ return  a+b;}
+    public double methodSub(double a,double b){
         return  a-b;
     }
-    public  static  double methodMult(double a,double b){
+    public double methodMult(double a,double b){
         return  a*b;
     }
-    public  static  double methodDiv(double a,double b){
+    public double methodDiv(double a,double b){
         return  a/b;
     }
 }

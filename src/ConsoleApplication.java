@@ -1,7 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ConsoleApplication {
+public class ConsoleApplication implements Application {
 
     private final FileWriter fileWriter; {
         try {
@@ -10,9 +10,9 @@ public class ConsoleApplication {
             throw new RuntimeException(e);
         }
     }
-    private final ConsoleReader reader = new ConsoleReader();
+    private final Reader reader = new ConsoleReader();
     private final Writer consoleWriter = new ConsoleWriter();
-    private final Calculator calculator=new Calculator();
+    private final ConsoleCalculator calculator=new ConsoleCalculator();
 
 
 
