@@ -1,0 +1,8 @@
+Operation@7530d0a
+Operation@7530d0a
+Operation{num1=12.0, num2=2.0, type='sum', result=14.0}
+Operation{num1=1.0, num2=2.0, type='sum', result=3.0}
+Operation{num1=1.0, num2=2.0, type='sum', result=3.0}
+Operation{num1=1.0, num2=2.0, type='sum', result=3.0}
+Operation{num1=1.0, num2=4.0, type='sum', result=5.0}
+Operation{num1=1.0, num2=2.0, type='mult', result=2.0}
