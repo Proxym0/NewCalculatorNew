@@ -1,3 +1,5 @@
+package console_io;
+
 public class ConsoleWriter implements Writer {
 int count=0;
     @Override

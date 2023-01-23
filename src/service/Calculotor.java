@@ -1,5 +1,11 @@
+package service;
+
+import entity.Operation;
+
+import java.util.Optional;
+
 public interface Calculotor {
-    public Operation calculator(Operation operation);
+    public Optional<Operation> calculator(Operation operation);
     double methodSum(double a,double b);
     double methodSub(double a,double b);
     double methodMult(double a,double b);

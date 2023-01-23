@@ -1,5 +1,12 @@
+package console_io;
+
+import console_io.*;
+import entity.Operation;
+import service.CalculatorService;
+
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Optional;
 
 public class ConsoleApplication implements Application {
 
@@ -12,7 +19,7 @@ public class ConsoleApplication implements Application {
     }
     private final Reader reader = new ConsoleReader();
     private final Writer consoleWriter = new ConsoleWriter();
-    private final ConsoleCalculator calculator=new ConsoleCalculator();
+    private final CalculatorService calculator=new CalculatorService();
 
 
 
@@ -26,7 +33,7 @@ public class ConsoleApplication implements Application {
             consoleWriter.methodWriter("Enter type");
             String operationType = reader.readString();
             Operation operation = new Operation(a, b, operationType);
-            Operation result = calculator.calculator(operation);
+            Optional<Operation> result = calculator.calculator(operation);
             try {
                 fileWriter.write(result.toString());
                 fileWriter.write("\n");
@@ -39,7 +46,7 @@ public class ConsoleApplication implements Application {
     }
     @Override
     public String toString() {
-        return "ConsoleApplication{" +
+        return "console_io.ConsoleApplication{" +
                 "calculator=" + calculator +
                 '}';
     }

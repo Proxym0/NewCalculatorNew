@@ -1,3 +1,5 @@
+package entity;
+
 import java.util.Objects;
 
 public class Operation {
@@ -14,17 +16,11 @@ public class Operation {
     public Operation() {
     }
 
-    public double getNum1() {
-        return num1;
-    }
+    public double getNum1() { return num1; }
 
-    public double getNum2() {
-        return num2;
-    }
+    public double getNum2() { return num2; }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
     public double getResult() {
         return result;
@@ -47,7 +43,7 @@ public class Operation {
 
     @Override
     public String toString() {
-        return "Operation{" +
+        return "entity.Operation{" +
                 "num1=" + num1 +
                 ", num2=" + num2 +
                 ", type='" + type + '\'' +
