@@ -6,9 +6,13 @@ import java.util.Optional;
 
 public interface Calculotor {
     public Optional<Operation> calculator(Operation operation);
-    double methodSum(double a,double b);
-    double methodSub(double a,double b);
-    double methodMult(double a,double b);
-    double methodDiv(double a,double b);
+
+    double methodSum(double a, double b);
+
+    double methodSub(double a, double b);
+
+    double methodMult(double a, double b);
+
+    double methodDiv(double a, double b);
 
 }

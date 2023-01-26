@@ -3,24 +3,8 @@ import console_io.ConsoleApplication;
 
 public class Main {
     public static void main(String[] args) {
-        Application consoleApplication=new ConsoleApplication();
+        Application consoleApplication = new ConsoleApplication();
         consoleApplication.run();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //        Integer[] ints = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};

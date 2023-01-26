@@ -13,14 +13,21 @@ public class Operation {
         this.num2 = num2;
         this.type = type;
     }
+
     public Operation() {
     }
 
-    public double getNum1() { return num1; }
+    public double getNum1() {
+        return num1;
+    }
 
-    public double getNum2() { return num2; }
+    public double getNum2() {
+        return num2;
+    }
 
-    public String getType() { return type; }
+    public String getType() {
+        return type;
+    }
 
     public double getResult() {
         return result;
@@ -29,6 +36,7 @@ public class Operation {
     public void setResult(double result) {
         this.result = result;
     }
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

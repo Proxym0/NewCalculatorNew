@@ -16,3 +16,4 @@ Optional.empty
 Optional[entity.Operation{num1=1.0, num2=2.0, type='sum', result=3.0}]
 Optional[entity.Operation{num1=3.0, num2=4.0, type='sum', result=7.0}]
 Optional[entity.Operation{num1=1.0, num2=2.0, type='sum', result=3.0}]
+Optional[entity.Operation{num1=1.0, num2=2.0, type='sum', result=3.0}]
