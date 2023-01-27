@@ -5,11 +5,14 @@ import entity.Operation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InMemoryOperationStorage {
+public class InMemoryOperationStorage implements OperationStorage {
+List<Operation> operationsList=new ArrayList<>();
 
-List<Operation> store = new ArrayList<>();
+public void save(Operation operation){
+    operationsList.add(operation);
+}
+public List<Operation> findAll(){
 
-void save(Operation operation){
-        store.add(operation);
+    return new ArrayList<>(operationsList);
 }
 }

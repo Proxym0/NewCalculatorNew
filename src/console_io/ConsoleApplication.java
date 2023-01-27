@@ -3,21 +3,9 @@ package console_io;
 import entity.Operation;
 import service.CalculatorService;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Optional;
 
 public class ConsoleApplication implements Application {
-
-    private final FileWriter fileWriter;
-
-    {
-        try {
-            fileWriter = new FileWriter("history.txt", true);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     private final Reader reader = new ConsoleReader();
     private final Writer consoleWriter = new ConsoleWriter();
@@ -27,8 +15,7 @@ public class ConsoleApplication implements Application {
     public void run() {
         while (true) {
             consoleWriter.methodWriter("Choose the type of operation.\n1.Calculator \n2.History output \n3.Exit");
-        }
-            int i=reader.readInteger();
+            int i = reader.readInteger();
             switch (i) {
                 case 1: {
                     consoleWriter.methodWriter("Enter number 1");
@@ -39,24 +26,19 @@ public class ConsoleApplication implements Application {
                     String operationType = reader.readString();
                     Operation operation = new Operation(a, b, operationType);
                     Optional<Operation> result = calculator.calculator(operation);
+                    consoleWriter.methodWriter("Result " + result);
+                }
+                continue;
+                case 2: {
+                    calculator.showHistory().forEach(s ->consoleWriter.methodWriter(s.toString()));
+                    continue;
+                }
+                case 3: {
+                    return;
                 }
             }
-//                case 2: {
-//
-//                }
-
-
-
-
-            try {
-                fileWriter.write(result.toString());
-                fileWriter.write("\n");
-                fileWriter.flush();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            consoleWriter.methodWriter("Result " + result);
         }
+    }
 
 
     @Override
