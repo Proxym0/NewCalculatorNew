@@ -8,7 +8,7 @@ import storage.OperationStorage;
 import java.util.List;
 import java.util.Optional;
 
-public class CalculatorService implements Calculotor {
+public class CalculatorService implements Calculator {
     private final OperationStorage inMemoryOperationStorage = new InMemoryOperationStorage();
     private final OperationStorage inFileOperationStorage = new InFileOperationStorage();
 

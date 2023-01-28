@@ -4,7 +4,7 @@ import entity.Operation;
 
 import java.util.Optional;
 
-public interface Calculotor {
+public interface Calculator {
     public Optional<Operation> calculator(Operation operation);
 
     double methodSum(double a, double b);
