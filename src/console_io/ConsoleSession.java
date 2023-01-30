@@ -1,19 +1,19 @@
 package console_io;
 
-import entity.Users;
+import entity.User;
 
 public class ConsoleSession {
-    private Users currentUser;
+    private User currentUser;
 
-    public ConsoleSession(Users currentUser) {
+    public ConsoleSession(User currentUser) {
         this.currentUser = currentUser;
     }
 
-    public Users getCurrentUser() {
+    public User getCurrentUser() {
         return currentUser;
     }
 
-    public void setCurrentUser(Users currentUser) {
+    public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
 }

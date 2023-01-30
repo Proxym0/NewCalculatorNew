@@ -1,8 +1,19 @@
 package console_io;
 
-public interface Reader {
-    public String readString();
+import java.util.Scanner;
 
-    public double readDouble();
-    public int readInteger();
+public interface Reader {
+    Scanner SCANNER = new Scanner(System.in);
+
+    static String readString() {
+        return SCANNER.next();
+    }
+
+    static double readDouble() {
+        return SCANNER.nextDouble();
+    }
+
+    static int readInteger() {
+        return SCANNER.nextInt();
+    }
 }

@@ -1,6 +1,6 @@
 package service;
 
-import entity.Users;
+import entity.User;
 import storage.InMemoryUsersStorage;
 
 import java.util.Optional;
@@ -8,9 +8,9 @@ import java.util.Optional;
 public class UserService {
     InMemoryUsersStorage userStorage=new InMemoryUsersStorage();
 
-    public void create(Users user) {
+    public void create(User user) {
         userStorage.save(user);
     }
-    public Optional<Users> findByUserName(String username){
+    public Optional<User> findByUserName(String username){
         return userStorage.byUserName(username);}
 }

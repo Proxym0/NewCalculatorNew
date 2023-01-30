@@ -5,13 +5,17 @@ import entity.Operation;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class InFileOperationStorage implements OperationStorage {
-private final String FILE_NAME="history.txt";
+    private final String FILE_NAME = "history.txt";
+    Date date = new Date();
 
     public void save(Operation operation) {
         try (FileWriter fileWriter = new FileWriter(FILE_NAME, true);) {
+            fileWriter.write(String.valueOf(date));
+            fileWriter.write(" ");
             fileWriter.write(operation.toString());
             fileWriter.write("\n");
             fileWriter.flush();

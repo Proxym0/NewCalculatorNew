@@ -1,17 +1,17 @@
 package console_io;
 
-import java.util.Scanner;
-
-public class ConsoleReader implements Reader {
-    private final Scanner scanner = new Scanner(System.in);
-
-    public String readString() {
-        return scanner.next();
-    }
-
-    public double readDouble() {
-        return scanner.nextDouble();
-    }
-
-    public int readInteger() { return scanner.nextInt(); }
-}
+//public final class ConsoleReader implements Reader {
+//    static final Scanner SCANNER = new Scanner(System.in);
+//
+//    public static String readString() {
+//        return SCANNER.next();
+//    }
+//
+//    public static double readDouble() {
+//        return SCANNER.nextDouble();
+//    }
+//
+//    public static int readInteger() {
+//        return SCANNER.nextInt();
+//    }
+//}

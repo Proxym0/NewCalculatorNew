@@ -1,15 +1,15 @@
 package entity;
 
-public class Users {
+public class User {
     private String userName;
     private String firstName;
     private String password;
 
-    public Users() {
+    public User() {
     }
 
 
-    public Users(String userName, String firstName, String password) {
+    public User(String userName, String firstName, String password) {
         this.userName = userName;
         this.firstName = firstName;
         this.password = password;

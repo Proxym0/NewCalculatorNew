@@ -1,5 +1,12 @@
 package console_io;
 
 public interface Writer {
-     void methodWriter(String message);
+     static void methodWriter(String message) {
+          System.out.println(message);
+     }
+
+     static void writeError(String message) {
+          System.out.println(message);
+     }
+
 }

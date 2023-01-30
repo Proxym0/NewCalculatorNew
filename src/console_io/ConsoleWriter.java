@@ -1,10 +1,10 @@
-package console_io;
-
-public class ConsoleWriter implements Writer {
-int count=0;
-    @Override
-    public void methodWriter(String message) {
-    count++;
-        System.out.println(message);
-    }
-}
+//package console_io;
+//
+//public class ConsoleWriter implements Writer {
+//static int count=0;
+//
+//    public static void methodWriter(String message) {
+//    count++;
+//        System.out.println(message);
+//    }
+//}
