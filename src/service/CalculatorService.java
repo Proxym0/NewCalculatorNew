@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class CalculatorService implements Calculator {
     private final OperationStorage inMemoryOperationStorage = new InMemoryOperationStorage();
-    private final OperationStorage inFileOperationStorage = new InFileOperationStorage();
+    private final InFileOperationStorage inFileOperationStorage = new InFileOperationStorage();
 
     public Optional<Operation> calculator(Operation operation) {
 

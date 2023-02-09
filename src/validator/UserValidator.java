@@ -1,11 +1,11 @@
-package Validator;
+package validator;
 
-import static console_io.Writer.writeError;
+import static console.Writer.writeError;
 
 public class UserValidator {
-    private static final String USERNAME = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$";
-    private static final String PASSWORD = "^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$";
-//    Pattern compile = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
+    private static final String USERNAME = "^[a-zA-Z]{4,8}$";
+    private static final String PASSWORD = "^[0-9]{8}$";
+
 
     public static boolean isValidUsername(String username) {
         if (!username.matches(USERNAME)) {

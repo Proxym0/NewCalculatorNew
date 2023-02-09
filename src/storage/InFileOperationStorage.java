@@ -4,13 +4,15 @@ import entity.Operation;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public class InFileOperationStorage implements OperationStorage {
+public class InFileOperationStorage extends Thread  {
     private final String FILE_NAME = "history.txt";
     Date date = new Date();
+
+    public InFileOperationStorage() {
+        setName("InFile");
+    }
 
     public void save(Operation operation) {
         try (FileWriter fileWriter = new FileWriter(FILE_NAME, true);) {
@@ -25,10 +27,10 @@ public class InFileOperationStorage implements OperationStorage {
         }
     }
 
-    @Override
-    public List<Operation> findAll() {
-        return new ArrayList<>();
-    }
+//    @Override
+//    public List<Operation> findAll() {
+//        return new ArrayList<>();
+//    }
 
 //    @Override
 //    public List<String> findAll() {

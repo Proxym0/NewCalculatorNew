@@ -1,4 +1,4 @@
-package console_io;
+package console;
 
 public interface Writer {
      static void methodWriter(String message) {

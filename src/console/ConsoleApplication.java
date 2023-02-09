@@ -1,22 +1,26 @@
-package console_io;
+package console;
 
 import entity.Operation;
 import entity.User;
 import service.CalculatorService;
 import service.UserService;
+import validator.UserValidator;
 
 import java.util.Optional;
 
-import static console_io.Reader.*;
-import static console_io.Writer.*;
+import static console.Reader.*;
+import static console.Writer.methodWriter;
 
 
-public class ConsoleApplication implements Application {
+public class ConsoleApplication extends Thread {
 
     private final CalculatorService calculator = new CalculatorService();
     UserService userService = new UserService();
     ConsoleSession consoleSession;
 
+    public ConsoleApplication() {
+        setName("ConsoleApplicationThread");
+    }
 
     public void run() {
         while (true) {
@@ -29,8 +33,14 @@ public class ConsoleApplication implements Application {
                         String firstName = readString();
                         methodWriter("Enter your nickname ");
                         String userName = readString();
+                        if (!UserValidator.isValidUsername(userName)) {
+                            continue;
+                        }
                         methodWriter("Enter password");
                         String password = readString();
+                        if (UserValidator.isValidPassword(password)) {
+                            continue;
+                        }
                         User user = new User(firstName, userName, password);
                         userService.create(user);
                         break;
@@ -64,23 +74,25 @@ public class ConsoleApplication implements Application {
                 methodWriter("Choose the type of operation.\n1.Calculator \n2.History output \n3.Exit");
                 int i = readInteger();
                 switch (i) {
-                    case 1: {
-                        methodWriter("Enter number 1");
-                        double a = readDouble();
-                        methodWriter("Enter number 2");
-                        double b = readDouble();
-                        methodWriter("Enter type");
-                        String operationType = readString();
-                        Operation operation = new Operation(a, b, operationType);
-                        Optional<Operation> result = calculator.calculator(operation);
-                        methodWriter("Result " + result);
+                    case 1 -> {
+                        {
+                            methodWriter("Enter number 1");
+                            double a = readDouble();
+                            methodWriter("Enter number 2");
+                            double b = readDouble();
+                            methodWriter("Enter type");
+                            String operationType = readString();
+                            Operation operation = new Operation(a, b, operationType);
+                            Optional<Operation> result = calculator.calculator(operation);
+                            methodWriter("Result " + result);
+                        }
+                        continue;
                     }
-                    continue;
-                    case 2: {
+                    case 2 -> {
                         calculator.showHistory().forEach(s -> methodWriter(s.toString()));
                         continue;
                     }
-                    case 3: {
+                    case 3 -> {
                         return;
                     }
                 }

@@ -1,10 +1,12 @@
-import console_io.Application;
-import console_io.ConsoleApplication;
+import console.ConsoleApplication;
+import storage.InFileOperationStorage;
 
 public class Main {
     public static void main(String[] args) {
-        Application consoleApplication = new ConsoleApplication();
-        consoleApplication.run();
+        Thread thread = new ConsoleApplication();
+        thread.start();
+        Thread thread1 = new InFileOperationStorage();
+        thread1.start();
 
 
 //        Integer[] ints = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};

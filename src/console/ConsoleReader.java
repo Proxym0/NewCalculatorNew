@@ -1,4 +1,4 @@
-package console_io;
+package console;
 
 //public final class ConsoleReader implements Reader {
 //    static final Scanner SCANNER = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package console_io;
+package console;
 
 import entity.User;
 
