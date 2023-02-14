@@ -3,6 +3,7 @@ package service;
 import entity.Operation;
 import storage.InFileOperationStorage;
 import storage.InMemoryOperationStorage;
+import storage.JDBCOperationStorage;
 import storage.OperationStorage;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Optional;
 public class CalculatorService implements Calculator {
     private final OperationStorage inMemoryOperationStorage = new InMemoryOperationStorage();
     private final InFileOperationStorage inFileOperationStorage = new InFileOperationStorage();
+    private final JDBCOperationStorage jdbcOperationStorage = new JDBCOperationStorage();
 
     public Optional<Operation> calculator(Operation operation) {
 
@@ -20,6 +22,7 @@ public class CalculatorService implements Calculator {
                 operation.setResult(sum);
                 inMemoryOperationStorage.save(operation);
                 inFileOperationStorage.save(operation);
+                jdbcOperationStorage.save(operation);
                 return Optional.of(operation);
             }
             case SUB: {
@@ -27,6 +30,7 @@ public class CalculatorService implements Calculator {
                 operation.setResult(sub);
                 inMemoryOperationStorage.save(operation);
                 inFileOperationStorage.save(operation);
+                jdbcOperationStorage.save(operation);
                 return Optional.of(operation);
             }
             case MULT: {
@@ -34,6 +38,7 @@ public class CalculatorService implements Calculator {
                 operation.setResult(mult);
                 inMemoryOperationStorage.save(operation);
                 inFileOperationStorage.save(operation);
+                jdbcOperationStorage.save(operation);
                 return Optional.of(operation);
             }
             case DIV: {
@@ -41,6 +46,7 @@ public class CalculatorService implements Calculator {
                 operation.setResult(div);
                 inMemoryOperationStorage.save(operation);
                 inFileOperationStorage.save(operation);
+                jdbcOperationStorage.save(operation);
                 return Optional.of(operation);
             }
         }
